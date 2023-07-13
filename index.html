@@ -1,0 +1,433 @@
+<!-- Copyright (c) 2023 All Rights Reserved -->
+
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title></title>
+<style type='text/css'>
+body {
+	font-family: sans-serif;
+}
+</style>
+
+<script>
+/* from https://cdn.jsdelivr.net/npm/client-zip/index.js */
+    var moduleData = "InN0cmVhbSJpbiBCbG9iLnByb3RvdHlwZXx8T2JqZWN0LmRlZmluZVByb3BlcnR5KEJsb2IucHJvdG90eXBlLCJzdHJlYW0iLHt2YWx1ZSgpe3JldHVybiBuZXcgUmVzcG9uc2UodGhpcykuYm9keX19KSwic2V0QmlnVWludDY0ImluIERhdGFWaWV3LnByb3RvdHlwZXx8T2JqZWN0LmRlZmluZVByb3BlcnR5KERhdGFWaWV3LnByb3RvdHlwZSwic2V0QmlnVWludDY0Iix7dmFsdWUoZSxuLHQpe2NvbnN0IGk9TnVtYmVyKDB4ZmZmZmZmZmZuJm4pLHI9TnVtYmVyKG4+PjMybik7dGhpcy5zZXRVaW50MzIoZSsodD8wOjQpLGksdCksdGhpcy5zZXRVaW50MzIoZSsodD80OjApLHIsdCl9fSk7dmFyIGU9ZT0+bmV3IERhdGFWaWV3KG5ldyBBcnJheUJ1ZmZlcihlKSksbj1lPT5uZXcgVWludDhBcnJheShlLmJ1ZmZlcnx8ZSksdD1lPT4obmV3IFRleHRFbmNvZGVyKS5lbmNvZGUoU3RyaW5nKGUpKSxpPWU9Pk1hdGgubWluKDQyOTQ5NjcyOTUsTnVtYmVyKGUpKSxyPWU9Pk1hdGgubWluKDY1NTM1LE51bWJlcihlKSk7ZnVuY3Rpb24gZihlLGkpe2lmKHZvaWQgMD09PWl8fGkgaW5zdGFuY2VvZiBEYXRlfHwoaT1uZXcgRGF0ZShpKSksZSBpbnN0YW5jZW9mIEZpbGUpcmV0dXJue2lzRmlsZToxLHQ6aXx8bmV3IERhdGUoZS5sYXN0TW9kaWZpZWQpLGk6ZS5zdHJlYW0oKX07aWYoZSBpbnN0YW5jZW9mIFJlc3BvbnNlKXJldHVybntpc0ZpbGU6MSx0Oml8fG5ldyBEYXRlKGUuaGVhZGVycy5nZXQoIkxhc3QtTW9kaWZpZWQiKXx8RGF0ZS5ub3coKSksaTplLmJvZHl9O2lmKHZvaWQgMD09PWkpaT1uZXcgRGF0ZTtlbHNlIGlmKGlzTmFOKGkpKXRocm93IG5ldyBFcnJvcigiSW52YWxpZCBtb2RpZmljYXRpb24gZGF0ZS4iKTtpZih2b2lkIDA9PT1lKXJldHVybntpc0ZpbGU6MCx0Oml9O2lmKCJzdHJpbmciPT10eXBlb2YgZSlyZXR1cm57aXNGaWxlOjEsdDppLGk6dChlKX07aWYoZSBpbnN0YW5jZW9mIEJsb2IpcmV0dXJue2lzRmlsZToxLHQ6aSxpOmUuc3RyZWFtKCl9O2lmKGUgaW5zdGFuY2VvZiBVaW50OEFycmF5fHxlIGluc3RhbmNlb2YgUmVhZGFibGVTdHJlYW0pcmV0dXJue2lzRmlsZToxLHQ6aSxpOmV9O2lmKGUgaW5zdGFuY2VvZiBBcnJheUJ1ZmZlcnx8QXJyYXlCdWZmZXIuaXNWaWV3KGUpKXJldHVybntpc0ZpbGU6MSx0OmksaTpuKGUpfTtpZihTeW1ib2wuYXN5bmNJdGVyYXRvciBpbiBlKXJldHVybntpc0ZpbGU6MSx0OmksaTpvKGVbU3ltYm9sLmFzeW5jSXRlcmF0b3JdKCkpfTt0aHJvdyBuZXcgVHlwZUVycm9yKCJVbnN1cHBvcnRlZCBpbnB1dCBmb3JtYXQuIil9ZnVuY3Rpb24gbyhlLG49ZSl7cmV0dXJuIG5ldyBSZWFkYWJsZVN0cmVhbSh7YXN5bmMgcHVsbChuKXtsZXQgdD0wO2Zvcig7bi5kZXNpcmVkU2l6ZT50Oyl7Y29uc3QgaT1hd2FpdCBlLm5leHQoKTtpZighaS52YWx1ZSl7bi5jbG9zZSgpO2JyZWFrfXtjb25zdCBlPWEoaS52YWx1ZSk7bi5lbnF1ZXVlKGUpLHQrPWUuYnl0ZUxlbmd0aH19fSxjYW5jZWwoZSl7bi50aHJvdz8uKGUpfX0pfWZ1bmN0aW9uIGEoZSl7cmV0dXJuInN0cmluZyI9PXR5cGVvZiBlP3QoZSk6ZSBpbnN0YW5jZW9mIFVpbnQ4QXJyYXk/ZTpuKGUpfWZ1bmN0aW9uIHMoZSxpLHIpe2xldFtmLG9dPWZ1bmN0aW9uKGUpe3JldHVybiBlP2UgaW5zdGFuY2VvZiBVaW50OEFycmF5P1tlLDFdOkFycmF5QnVmZmVyLmlzVmlldyhlKXx8ZSBpbnN0YW5jZW9mIEFycmF5QnVmZmVyP1tuKGUpLDFdOlt0KGUpLDBdOlt2b2lkIDAsMF19KGkpO2lmKGUgaW5zdGFuY2VvZiBGaWxlKXJldHVybntvOmQoZnx8dChlLm5hbWUpKSx1OkJpZ0ludChlLnNpemUpLGw6b307aWYoZSBpbnN0YW5jZW9mIFJlc3BvbnNlKXtjb25zdCBuPWUuaGVhZGVycy5nZXQoImNvbnRlbnQtZGlzcG9zaXRpb24iKSxpPW4mJm4ubWF0Y2goLztccypmaWxlbmFtZVwqPz1bIiddPyguKj8pWyInXT8kL2kpLGE9aSYmaVsxXXx8ZS51cmwmJm5ldyBVUkwoZS51cmwpLnBhdGhuYW1lLnNwbGl0KCIvIikuZmluZExhc3QoQm9vbGVhbikscz1hJiZkZWNvZGVVUklDb21wb25lbnQoYSksdT1yfHwrZS5oZWFkZXJzLmdldCgiY29udGVudC1sZW5ndGgiKTtyZXR1cm57bzpkKGZ8fHQocykpLHU6QmlnSW50KHUpLGw6b319cmV0dXJuIGY9ZChmLHZvaWQgMCE9PWV8fHZvaWQgMCE9PXIpLCJzdHJpbmciPT10eXBlb2YgZT97bzpmLHU6QmlnSW50KHQoZSkubGVuZ3RoKSxsOm99OmUgaW5zdGFuY2VvZiBCbG9iP3tvOmYsdTpCaWdJbnQoZS5zaXplKSxsOm99OmUgaW5zdGFuY2VvZiBBcnJheUJ1ZmZlcnx8QXJyYXlCdWZmZXIuaXNWaWV3KGUpP3tvOmYsdTpCaWdJbnQoZS5ieXRlTGVuZ3RoKSxsOm99OntvOmYsdTp1KGUsciksbDpvfX1mdW5jdGlvbiB1KGUsbil7cmV0dXJuIG4+LTE/QmlnSW50KG4pOmU/dm9pZCAwOjBufWZ1bmN0aW9uIGQoZSxuPTEpe2lmKCFlfHxlLmV2ZXJ5KChjPT40Nz09PWMpKSl0aHJvdyBuZXcgRXJyb3IoIlRoZSBmaWxlIG11c3QgaGF2ZSBhIG5hbWUuIik7aWYobilmb3IoOzQ3PT09ZVtlLmxlbmd0aC0xXTspZT1lLnN1YmFycmF5KDAsLTEpO2Vsc2UgNDchPT1lW2UubGVuZ3RoLTFdJiYoZT1uZXcgVWludDhBcnJheShbLi4uZSw0N10pKTtyZXR1cm4gZX12YXIgbD1uZXcgVWludDMyQXJyYXkoMjU2KTtmb3IobGV0IGU9MDtlPDI1NjsrK2Upe2xldCBuPWU7Zm9yKGxldCBlPTA7ZTw4OysrZSluPW4+Pj4xXigxJm4mJjM5ODgyOTIzODQpO2xbZV09bn1mdW5jdGlvbiB5KGUsbj0wKXtuXj0tMTtmb3IodmFyIHQ9MCxpPWUubGVuZ3RoO3Q8aTt0Kyspbj1uPj4+OF5sWzI1NSZuXmVbdF1dO3JldHVybigtMV5uKT4+PjB9ZnVuY3Rpb24gQihlLG4sdD0wKXtjb25zdCBpPWUuZ2V0U2Vjb25kcygpPj4xfGUuZ2V0TWludXRlcygpPDw1fGUuZ2V0SG91cnMoKTw8MTEscj1lLmdldERhdGUoKXxlLmdldE1vbnRoKCkrMTw8NXxlLmdldEZ1bGxZZWFyKCktMTk4MDw8OTtuLnNldFVpbnQxNih0LGksMSksbi5zZXRVaW50MTYodCsyLHIsMSl9ZnVuY3Rpb24gdyh7bzplLGw6bn0sdCl7cmV0dXJuIDgqKCFufHwodD8/ZnVuY3Rpb24oZSl7dHJ5e2IuZGVjb2RlKGUpfWNhdGNoe3JldHVybiAwfXJldHVybiAxfShlKSkpfXZhciBiPW5ldyBUZXh0RGVjb2RlcigidXRmOCIse2ZhdGFsOjF9KTtmdW5jdGlvbiBwKHQsaT0wKXtjb25zdCByPWUoMzApO3JldHVybiByLnNldFVpbnQzMigwLDEzNDcwOTMyNTIpLHIuc2V0VWludDMyKDQsNzU0OTc2NzY4fGkpLEIodC50LHIsMTApLHIuc2V0VWludDE2KDI2LHQuby5sZW5ndGgsMSksbihyKX1hc3luYyBmdW5jdGlvbipnKGUpe2xldHtpOm59PWU7aWYoInRoZW4iaW4gbiYmKG49YXdhaXQgbiksbiBpbnN0YW5jZW9mIFVpbnQ4QXJyYXkpeWllbGQgbixlLm09eShuLDApLGUudT1CaWdJbnQobi5sZW5ndGgpO2Vsc2V7ZS51PTBuO2NvbnN0IHQ9bi5nZXRSZWFkZXIoKTtmb3IoOzspe2NvbnN0e3ZhbHVlOm4sZG9uZTppfT1hd2FpdCB0LnJlYWQoKTtpZihpKWJyZWFrO2UubT15KG4sZS5tKSxlLnUrPUJpZ0ludChuLmxlbmd0aCkseWllbGQgbn19fWZ1bmN0aW9uIEkodCxyKXtjb25zdCBmPWUoMTYrKHI/ODowKSk7cmV0dXJuIGYuc2V0VWludDMyKDAsMTM0NzA5NDI4MCksZi5zZXRVaW50MzIoNCx0LmlzRmlsZT90Lm06MCwxKSxyPyhmLnNldEJpZ1VpbnQ2NCg4LHQudSwxKSxmLnNldEJpZ1VpbnQ2NCgxNix0LnUsMSkpOihmLnNldFVpbnQzMig4LGkodC51KSwxKSxmLnNldFVpbnQzMigxMixpKHQudSksMSkpLG4oZil9ZnVuY3Rpb24gdih0LHIsZj0wLG89MCl7Y29uc3QgYT1lKDQ2KTtyZXR1cm4gYS5zZXRVaW50MzIoMCwxMzQ3MDkyNzM4KSxhLnNldFVpbnQzMig0LDc1NTE4Mjg0OCksYS5zZXRVaW50MTYoOCwyMDQ4fGYpLEIodC50LGEsMTIpLGEuc2V0VWludDMyKDE2LHQuaXNGaWxlP3QubTowLDEpLGEuc2V0VWludDMyKDIwLGkodC51KSwxKSxhLnNldFVpbnQzMigyNCxpKHQudSksMSksYS5zZXRVaW50MTYoMjgsdC5vLmxlbmd0aCwxKSxhLnNldFVpbnQxNigzMCxvLDEpLGEuc2V0VWludDE2KDQwLHQuaXNGaWxlPzMzMjA0OjE2ODkzLDEpLGEuc2V0VWludDMyKDQyLGkociksMSksbihhKX1mdW5jdGlvbiBoKHQsaSxyKXtjb25zdCBmPWUocik7cmV0dXJuIGYuc2V0VWludDE2KDAsMSwxKSxmLnNldFVpbnQxNigyLHItNCwxKSwxNiZyJiYoZi5zZXRCaWdVaW50NjQoNCx0LnUsMSksZi5zZXRCaWdVaW50NjQoMTIsdC51LDEpKSxmLnNldEJpZ1VpbnQ2NChyLTgsaSwxKSxuKGYpfWZ1bmN0aW9uIEQoZSl7cmV0dXJuIGUgaW5zdGFuY2VvZiBGaWxlfHxlIGluc3RhbmNlb2YgUmVzcG9uc2U/W1tlXSxbZV1dOltbZS5pbnB1dCxlLm5hbWUsZS5zaXplXSxbZS5pbnB1dCxlLmxhc3RNb2RpZmllZF1dfXZhciBTPWU9PmZ1bmN0aW9uKGUpe2xldCBuPUJpZ0ludCgyMiksdD0wbixpPTA7Zm9yKGNvbnN0IHIgb2YgZSl7aWYoIXIubyl0aHJvdyBuZXcgRXJyb3IoIkV2ZXJ5IGZpbGUgbXVzdCBoYXZlIGEgbm9uLWVtcHR5IG5hbWUuIik7aWYodm9pZCAwPT09ci51KXRocm93IG5ldyBFcnJvcihgTWlzc2luZyBzaXplIGZvciBmaWxlICIkeyhuZXcgVGV4dERlY29kZXIpLmRlY29kZShyLm8pfSIuYCk7Y29uc3QgZT1yLnU+PTB4ZmZmZmZmZmZuLGY9dD49MHhmZmZmZmZmZm47dCs9QmlnSW50KDQ2K3Iuby5sZW5ndGgrKGUmJjgpKStyLnUsbis9QmlnSW50KHIuby5sZW5ndGgrNDYrKDEyKmZ8MjgqZSkpLGl8fChpPWUpfXJldHVybihpfHx0Pj0weGZmZmZmZmZmbikmJihuKz1CaWdJbnQoNzYpKSxuK3R9KGZ1bmN0aW9uKihlKXtmb3IoY29uc3QgbiBvZiBlKXlpZWxkIHMoLi4uRChuKVswXSl9KGUpKTtmdW5jdGlvbiBBKGUsbj17fSl7Y29uc3QgdD17IkNvbnRlbnQtVHlwZSI6ImFwcGxpY2F0aW9uL3ppcCIsIkNvbnRlbnQtRGlzcG9zaXRpb24iOiJhdHRhY2htZW50In07cmV0dXJuKCJiaWdpbnQiPT10eXBlb2Ygbi5sZW5ndGh8fE51bWJlci5pc0ludGVnZXIobi5sZW5ndGgpKSYmbi5sZW5ndGg+MCYmKHRbIkNvbnRlbnQtTGVuZ3RoIl09U3RyaW5nKG4ubGVuZ3RoKSksbi5tZXRhZGF0YSYmKHRbIkNvbnRlbnQtTGVuZ3RoIl09U3RyaW5nKFMobi5tZXRhZGF0YSkpKSxuZXcgUmVzcG9uc2UoTihlLG4pLHtoZWFkZXJzOnR9KX1mdW5jdGlvbiBOKHQsYT17fSl7Y29uc3QgdT1mdW5jdGlvbihlKXtjb25zdCBuPWVbU3ltYm9sLml0ZXJhdG9yIGluIGU/U3ltYm9sLml0ZXJhdG9yOlN5bWJvbC5hc3luY0l0ZXJhdG9yXSgpO3JldHVybnthc3luYyBuZXh0KCl7Y29uc3QgZT1hd2FpdCBuLm5leHQoKTtpZihlLmRvbmUpcmV0dXJuIGU7Y29uc3RbdCxpXT1EKGUudmFsdWUpO3JldHVybntkb25lOjAsdmFsdWU6T2JqZWN0LmFzc2lnbihmKC4uLmkpLHMoLi4udCkpfX0sdGhyb3c6bi50aHJvdz8uYmluZChuKSxbU3ltYm9sLmFzeW5jSXRlcmF0b3JdKCl7cmV0dXJuIHRoaXN9fX0odCk7cmV0dXJuIG8oYXN5bmMgZnVuY3Rpb24qKHQsZil7Y29uc3Qgbz1bXTtsZXQgYT0wbixzPTBuLHU9MDtmb3IgYXdhaXQoY29uc3QgZSBvZiB0KXtjb25zdCBuPXcoZSxmLmJ1ZmZlcnNBcmVVVEY4KTt5aWVsZCBwKGUsbikseWllbGQgZS5vLGUuaXNGaWxlJiYoeWllbGQqZyhlKSk7Y29uc3QgdD1lLnU+PTB4ZmZmZmZmZmZuLGk9MTIqKGE+PTB4ZmZmZmZmZmZuKXwyOCp0O3lpZWxkIEkoZSx0KSxvLnB1c2godihlLGEsbixpKSksby5wdXNoKGUubyksaSYmby5wdXNoKGgoZSxhLGkpKSx0JiYoYSs9OG4pLHMrKyxhKz1CaWdJbnQoNDYrZS5vLmxlbmd0aCkrZS51LHV8fCh1PXQpfWxldCBkPTBuO2Zvcihjb25zdCBlIG9mIG8peWllbGQgZSxkKz1CaWdJbnQoZS5sZW5ndGgpO2lmKHV8fGE+PTB4ZmZmZmZmZmZuKXtjb25zdCB0PWUoNzYpO3Quc2V0VWludDMyKDAsMTM0NzA5NDAyMiksdC5zZXRCaWdVaW50NjQoNCxCaWdJbnQoNDQpLDEpLHQuc2V0VWludDMyKDEyLDc1NTE4Mjg0OCksdC5zZXRCaWdVaW50NjQoMjQscywxKSx0LnNldEJpZ1VpbnQ2NCgzMixzLDEpLHQuc2V0QmlnVWludDY0KDQwLGQsMSksdC5zZXRCaWdVaW50NjQoNDgsYSwxKSx0LnNldFVpbnQzMig1NiwxMzQ3MDk0MDIzKSx0LnNldEJpZ1VpbnQ2NCg2NCxhK2QsMSksdC5zZXRVaW50MzIoNzIsMSwxKSx5aWVsZCBuKHQpfWNvbnN0IGw9ZSgyMik7bC5zZXRVaW50MzIoMCwxMzQ3MDkzNzY2KSxsLnNldFVpbnQxNig4LHIocyksMSksbC5zZXRVaW50MTYoMTAscihzKSwxKSxsLnNldFVpbnQzMigxMixpKGQpLDEpLGwuc2V0VWludDMyKDE2LGkoYSksMSkseWllbGQgbihsKX0odSxhKSx1KX1leHBvcnR7QSBhcyBkb3dubG9hZFppcCxOIGFzIG1ha2VaaXAsUyBhcyBwcmVkaWN0TGVuZ3RofTs=";
+    var b64moduleData = "data:text/javascript;base64," + moduleData;
+</script>
+
+<script type="module">
+
+var clientzip = null;
+
+async function doimport() {
+	clientzip = await import(b64moduleData);
+}
+
+doimport();
+
+window.downloadTestZip = downloadTestZip;
+
+export async function downloadTestZip(files) {
+	//intro = { name: "intro.txt", lastModified: new Date(), input: "Hello. This is the client-zip library." }
+	//var files = [intro]
+  // get the ZIP stream in a Blob
+  const blob = await clientzip.downloadZip(files).blob()
+  // make and click a temporary link to download the Blob
+  const link = document.createElement("a")
+  link.href = URL.createObjectURL(blob)
+  link.download = "decoded.zip"
+  link.click()
+//  link.remove()
+}
+</script>
+
+<script>
+
+function make_arraybuffer_from_string(input) {
+	var buffer = new ArrayBuffer(input.length);
+	var uint_array = new Uint8Array(buffer);
+	let dataview = new DataView(buffer);
+	for(var i=0; i<input.length; i++){
+		dataview.setUint8(i, input.charCodeAt(i));
+	}
+	return dataview;
+}
+
+function generate_zip(input) {
+	console.log("generating zip")
+//	console.log("current output: "+convertToHex(input.slice(0,100)));
+	var input=input.split("END_MAIDCARD\n")[0];
+	var filestrings = input.split("\nEND_MAIDCARD_FILE\n");
+	var files = [];
+	var filename = "";
+	for(filestring of filestrings) {
+		filestring = filestring.replace("BEGIN_MAIDCARD_FILE ","");
+		filename = filestring.split("\n")[0];
+		if(filename != "") {
+			filestring = filestring.replace(filename+"\n","");
+			filename =filename.trim();
+//			console.log("current output: "+convertToHex(filestring.slice(0,100)));
+			var buf = make_arraybuffer_from_string(filestring);
+			var file = { name: filename, lastModified: new Date(), input: buf };
+			files.push(file);
+		}
+	}
+	downloadTestZip(files);
+}
+
+function imageToPixelArray(ctx, canvas) {
+	var pixels = [];
+	var width = canvas.width;
+	var height = canvas.height;
+	for (var row = height - 1; row >= 0; row--) {
+		for (var col = width - 1; col >= 0; col--) {
+			var pixel = [0,0,0,0];
+			var raw_pixel = ctx.getImageData(col,row,1,1).data;
+			pixel[0] = Math.round(-1 * (raw_pixel[3] - 255)); //alpha
+			pixel[1] = Math.round(-1 * (raw_pixel[2] - 255)); //blue
+			pixel[2] = Math.round(-1 * (raw_pixel[1] - 255)); //green
+			pixel[3] = Math.round(-1 * (raw_pixel[0] - 255)); //red
+			pixels.push(pixel);
+		}
+	}
+	return pixels;
+}
+
+function mod(n,d){
+	return ((n % d) + d) % d;
+}
+
+function incr_pixel(input){
+	if(Math.round(mod(++input[3],256))===0) input[3]=0;
+	else return;
+	if(Math.round(mod(++input[2],256))===0) input[2]=0;
+	else return;
+	if(Math.round(mod(++input[1],256))===0) input[1]=0;
+	else return;
+	if(Math.round(mod(++input[0],256))===0) input[0]=0;
+}
+
+function ischar(str){
+	return str.charCodeAt(0) < 256 && str.charCodeAt(0) > -1;
+}
+
+function quad2str(input){
+	return input[0]+" "+input[1]+" "+input[2]+" "+input[3];
+}
+
+function encode(input) {
+	input+="\nEND_MAIDCARD\n";
+	var symbol_list = [];
+	var counter = [0,0,0,0];
+	var dict = new Map();
+	var previous_segment = "";
+	var current_segment = "";
+	for(var character = 0; character < 256; character++) {	
+		dict.set(String.fromCharCode(character), counter.slice());
+		incr_pixel(counter);
+	}
+	var c=""
+//	console.log("Entering main loop. counter: "+quad2str(counter));
+	for(var i=0; i<input.length; i++){
+//		console.log("Main loop iteration. j: "+i+" counter: "+quad2str(counter));
+		if(i==331) {
+//			console.log("relevant iteration");
+		}
+		c=input.charAt(i);
+//		if(!ischar(c)) alert("WARNING: CHARACTER OUT OF RANGE");
+//		console.log("previous_segment: "+previous_segment+" current_segment: "+current_segment+" c: "+c);
+		current_segment+=previous_segment;
+		current_segment+=c;
+		var searched_item=dict.get(current_segment);
+		if(searched_item) {
+//			console.log("dictionary contains current segment");
+			previous_segment = current_segment;
+		}
+		else if (dict.get(previous_segment)) {
+			var adding = dict.get(previous_segment);
+//			console.log("dictionary contains previous segment, adding the following segment to the dictionary: "+previous_segment);
+			symbol_list.push(adding);
+			dict.set(current_segment, counter.slice());
+			incr_pixel(counter);
+			previous_segment=c;
+		}
+		current_segment = ""
+	} 
+	if(dict.get(previous_segment)) symbol_list.push(dict.get(previous_segment));
+//	decode(symbol_list);
+	return symbol_list;
+}
+
+function decode_image(ctx, canvas) {
+	var data = imageToPixelArray(ctx, canvas);
+	return decode(data);
+}
+
+function compare_arrays(a,b){
+ if(a.length != b.length) return -1;
+ for(var i=0; i<a.length; i++){
+ 	if(a[i] !== b[i]) return 1;
+ }
+ return 0;
+}
+
+class SMap extends Map {
+	get(key) {
+		var skey = JSON.stringify(key); 
+		return super.get(skey);
+	}
+	set(key, val) {
+		var skey = JSON.stringify(key);
+		super.set(skey,val);
+	}
+}
+
+function checkStringValues(input){
+	for(var i=0;i<input.length;i++){
+		var c = input.charAt(i);
+		if(!ischar(c)) alert("WARNING: CHARACTER OUT OF RANGE");
+	}
+}
+
+function convertToHex(str) {
+    var hex = '';
+    for(var i=0;i<str.length;i++) {
+        hex += ''+str.charCodeAt(i).toString(16)+' ';
+    }
+    return hex;
+}
+
+function decode(data) {
+	var dict = new SMap();
+	var count = [0,0,0,0];
+	for (var c = 0; c < 256; c++) {
+		dict.set(count.slice(0),String.fromCharCode(c));
+		incr_pixel(count);
+	}
+	var first_pixel = data[0];
+	data.splice(0, 1);
+	var previous_segment /* was w */ = dict.get(first_pixel);
+	var output /* was r */ = previous_segment;
+	var plaintext_segment = "" /* was e*/;
+	var i = 0;
+	var temp = "";
+	for (var pixel of data) {
+//		console.log("i: "+i+" count: "+count+" symbol: "+pixel);
+		//if we already have the code in the dictionary, convert to plaintext
+//		checkStringValues(plaintext_segment);
+//		checkStringValues(previous_segment);
+		if (dict.get(pixel)) {
+			plaintext_segment=plaintext_segment+dict.get(pixel);
+		}
+		//else, we know it's the concatenation of the current plaintext and the previous plaintext
+		else if (compare_arrays(pixel, count) === 0) { //not sure why this check is made
+			//console.log("pixel==count");
+			temp=previous_segment[0];
+			plaintext_segment=plaintext_segment+previous_segment+temp
+		}
+		output=output+plaintext_segment;
+//		if(i==100) console.log("current output: "+convertToHex(output));
+		if (plaintext_segment.length > 0) {
+		 dict.set(count.slice(),previous_segment+plaintext_segment[0])
+		}	 
+		incr_pixel(count);		
+		previous_segment=plaintext_segment;
+		//reset the segment after each pixel
+//		checkStringValues(plaintext_segment);
+//		checkStringValues(previous_segment);
+		plaintext_segment="";
+/*		if(i>2000) {
+			console.log(output);
+			return;
+		}*/
+		i++;
+	}
+//	console.log(output);
+	return output;
+}
+
+function DownloadCanvasAsImage(canvas){
+    let downloadLink = document.createElement('a');
+    downloadLink.setAttribute('download', 'encoded.png');
+    let dataURL = canvas.toDataURL('image/png');
+    let url = dataURL.replace(/^data:image\/png/,'data:application/octet-stream');
+    downloadLink.setAttribute('href', url);
+    downloadLink.click();
+    downloadLink.remove();
+}
+
+function idiv(x,y) {
+	return Math.floor(x/y);
+}
+
+function start_processingDecode(){
+  alert("Proceeding to decode, this shouldn't take more than a minute or two...");
+//	setTimeout(function(e){start_processing(false)},1000);
+	start_processing(false);
+}
+
+function start_processing(encoding) {
+	console.log("start_processing")
+	var input, file, fr_image, fr, img;
+	if (typeof window.FileReader !== 'function') {
+		write("The file API isn't supported on this browser.");
+		return;
+	}
+	input = document.getElementById('imgfile');
+	if (!input) {
+		write("Couldn't find the imgfile element.");
+	}
+	else if (!input.files) {
+		write("This browser doesn't seem to support the `files` property of file inputs.");
+	}
+	else if (!input.files[0]) {
+		if(!encoding){ 
+				write("Please select the image to decode.");
+		}
+	}
+	else {
+		file = input.files[0];
+		fr_image = new FileReader();
+		fr_image.onload = function(e){load_img_element(encoding,fr_image)};
+		fr_image.readAsDataURL(file);
+	}
+	var count = 0;
+	var file_count=0;
+	var files = [];
+	if (encoding) {
+		input = document.getElementById('files');
+		if (!input.files[0]) {
+			write("Please select the files to encode.");
+			return;
+		}
+		file_count = input.files.length;
+		for(file of input.files){
+			fr = new FileReader();
+			fr.onload = function(e) {start_modification_of_images(e, file.name)};
+			fr.readAsArrayBuffer(file);
+		}
+	}
+	function generate_string(files){
+		var output = ""
+		for(file of files){
+			var content = ""
+			const view = new Uint8Array(file[0]);
+			for(c of view) {
+				content += String.fromCharCode(c)
+			}
+			output += "BEGIN_MAIDCARD_FILE "+file[1]+"\n"+content+"\nEND_MAIDCARD_FILE\n";
+		}
+		return output
+	}
+	var text_to_encode="";
+	function start_modification_of_images(evt, name){
+		console.log("start_modification_of_images");
+		count++;
+		if(count!=file_count) {
+			files.push([evt.target.result, name]);			
+			return;
+		}
+		files.push([evt.target.result, name]);
+		text_to_encode = generate_string(files);
+//		main_function(true);
+	}
+	function load_img_element(encoding, fr_image_p) {
+		console.log("load_img_element");
+		img = new Image();
+		img.src = fr_image_p.result;
+		img.onload = function(e) {main_function(encoding)};
+	}
+	function main_function(encoding) {
+		var text=text_to_encode;
+		console.log("main_function");
+		var pixel_data = null
+		if(encoding) {
+			var plaintext = text;
+			pixel_data=encode(plaintext);
+		}
+		var canvas = document.getElementById("canvas")
+		canvas.width = img.width;
+		var additional_rows = 0;
+		if(encoding) {
+			additional_rows = idiv(pixel_data.length,canvas.width) + 1;
+		}
+		canvas.height = img.height+additional_rows;
+		var ctx = canvas.getContext("2d", { willReadFrequently: true });
+		ctx.drawImage(img,0,0);
+		if(encoding) {
+			pixel_data=encode(plaintext);
+			var i=0;
+			for(var i = 0; i<additional_rows*canvas.width; i++ ){
+				if(pixel_data[i]){
+					var pixel = pixel_data[i];
+					var r = Math.round((pixel[3]-255)*-1);
+					var g = Math.round((pixel[2]-255)*-1);
+					var b = Math.round((pixel[1]-255)*-1);
+					var a = Math.round((pixel[0]-255)*-1);
+				}
+				else {
+					var r = 255;
+					var g = 255;
+					var b = 255;
+					var a = 255;
+				}
+				ctx.fillStyle = "rgba("+r+","+g+","+b+","+(a/255)+")";
+				var y = canvas.height - idiv(i,canvas.width) - 1;
+				var x = canvas.width - mod(i, canvas.width) - 1;
+//				console.log("drawing x, y: "+x+" "+y)
+				ctx.fillRect( x, y, 1, 1 );
+			}
+			DownloadCanvasAsImage(canvas);
+		}
+//		alert(canvas.toDataURL("image/png"));
+		if(!encoding){
+			generate_zip(decode_image(ctx, canvas));
+		}
+
+		//if it's for encoding, resize
+		
+	}
+	
+	function write(msg) {
+		var p = document.createElement('p');
+		p.innerHTML = msg;
+		document.body.appendChild(p);
+	}
+}
+
+</script>
+
+<style>
+input {
+	margin: 25px 0px;
+}
+#main {
+	margin: 15px 30px;
+	width: 700px;
+}
+h2 {
+	margin: 45px 0px 50px 0px;
+}
+</style>
+
+</head>
+<body>
+<div id="main">
+	<h2>Image based data encoder/decoder</h2>
+	<form action='#' onsubmit="return false;">
+		<p> Select an <b>image</b> (with data ready to decode, or to encode data into it): </p>
+		<input type='file' id='imgfile'/>
+		<br>
+		<p> Select the <b>files</b> with the data to encode into the image (only necessary if you are encoding data into a clean image, ctrl+click to select more than one): </p>
+		<input type='file' multiple="multiple" id='files'/>
+		<br>
+		<p> After the files have been loaded, choose an action: </p>
+		<input type='button' id='btnLoadDecode' value="Decode image" onclick='start_processingDecode();' />
+		<input style="margin-left: 50px" type='button' id='btnLoadEncode' value="Generate image" onclick='start_processing(true);' />
+		<br><br><br>
+	</form>
+		<canvas style='width: 600px' id="canvas"></canvas>
+</div>
+</body>
+
